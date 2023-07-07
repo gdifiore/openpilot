@@ -63,7 +63,7 @@ typedef struct
     int nbu;
     int nbx;
     int ng;   // number of general linear constraints
-    int nphi; // dimension of convex outer part 
+    int nphi; // dimension of convex outer part
     int ns;   // nsbu + nsbx + nsg + nsphi
     int nsbu; // number of softened input bounds
     int nsbx; // number of softened state bounds
@@ -80,9 +80,6 @@ typedef struct
 acados_size_t ocp_nlp_constraints_bgp_dims_calculate_size(void *config);
 //
 void *ocp_nlp_constraints_bgp_dims_assign(void *config, void *raw_memory);
-//
-void ocp_nlp_constraints_bgp_dims_initialize(void *config, void *dims, int nx, int nu, int nz, 
-		int nbx, int nbu, int ng, int nphi, int nq, int ns);
 //
 void ocp_nlp_constraints_bgp_dims_get(void *config_, void *dims_, const char *field, int* value);
 
@@ -108,6 +105,9 @@ acados_size_t ocp_nlp_constraints_bgp_calculate_size(void *config, void *dims);
 void *ocp_nlp_constraints_bgp_assign(void *config, void *dims, void *raw_memory);
 //
 int ocp_nlp_constraints_bgp_model_set(void *config_, void *dims_,
+                         void *model_, const char *field, void *value);
+//
+void ocp_nlp_constraints_bgp_model_get(void *config_, void *dims_,
                          void *model_, const char *field, void *value);
 
 /* options */
